@@ -43,7 +43,7 @@ end
 
 thresholdPercent = 20;
 %islandFlag       = false;
-smoothKernel     = [3 3 3];
+smoothKernel     = [5 5 5];
 voxelResize = config.voxelResize;
 
 for ifg=1:length(fg_classified)
