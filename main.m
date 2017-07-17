@@ -41,7 +41,8 @@ if config.clean_afq
 end
 
 
-thresholdPercent = 20;
+%thresholdPercent = 20;
+thresholdPercent = 10;
 %islandFlag       = false;
 smoothKernel     = [5 5 5];
 voxelResize = config.voxelResize;
