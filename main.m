@@ -42,7 +42,7 @@ end
 
 
 %thresholdPercent = 20;
-thresholdPercent = 10;
+thresholdPercent = 0;
 %islandFlag       = false;
 smoothKernel     = [5 5 5];
 voxelResize = config.voxelResize;
