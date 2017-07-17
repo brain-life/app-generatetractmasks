@@ -112,7 +112,9 @@ for ifg=1:length(fg_classified)
     % It could be that the function to detect islands is broken, so this may
     % simply be pointless.
     if config.smooth
+    fprintf('Raw voxel Volume = % i ', length(find(emptyMatrix>0)))
         smoothData = smooth3(emptyMatrix,'gaussian',smoothKernel);
+	fprintf('Smoothed voxel Volume = % i ', length(find(smoothData>0)))
         % auto threshold computation
         % computes the appropriate threshold for the given percentile value.
         % Probably not computationally efficient, but principled (aside from the
