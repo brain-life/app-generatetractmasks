@@ -41,10 +41,10 @@ if config.clean_afq
 end
 
 
-%thresholdPercent = 20;
-thresholdPercent = 0;
+thresholdPercent = 20;
+%thresholdPercent = 0;
 %islandFlag       = false;
-smoothKernel     = [5 5 5];
+smoothKernel     = [9 9 9];
 voxelResize = config.voxelResize;
 
 for ifg=1:length(fg_classified)
