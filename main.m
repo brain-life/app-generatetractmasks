@@ -44,7 +44,7 @@ end
 thresholdPercent = 20;
 %thresholdPercent = 0;
 %islandFlag       = false;
-smoothKernel     = [9 9 9];
+smoothKernel     = [3 3 3];
 voxelResize = config.voxelResize;
 
 for ifg=1:length(fg_classified)
@@ -113,9 +113,9 @@ for ifg=1:length(fg_classified)
     % simply be pointless.
     if config.smooth
     fprintf('\n Raw voxel Volume = % i ', length(find(emptyMatrix>0)))
-        %smoothData = smooth3(emptyMatrix,'gaussian',smoothKernel);
-	thickenData = thickenbinvol(emptyMatrix, 1);
-	smoothData = smoothbinvol(thickenData, 5);
+        smoothData = smooth3(emptyMatrix,'gaussian',smoothKernel);
+	%thickenData = thickenbinvol(emptyMatrix, 1);
+	%smoothData = smoothbinvol(thickenData, 5);
 	%smoothData = imgaussfilt3(emptyMatrix)
 	fprintf('\n Smoothed voxel Volume = % i ', length(find(smoothData>0)))
         % auto threshold computation
