@@ -114,7 +114,9 @@ for ifg=1:length(fg_classified)
     if config.smooth
     fprintf('\n Raw voxel Volume = % i ', length(find(emptyMatrix>0)))
         %smoothData = smooth3(emptyMatrix,'gaussian',smoothKernel);
-	smoothData = imgaussfilt3(emptyMatrix)
+	thickenData = thickenbinvol(emptyMatrix, 2);
+	smoothData = smoothbinvol(thickenData, 5);
+	%smoothData = imgaussfilt3(emptyMatrix)
 	fprintf('\n Smoothed voxel Volume = % i ', length(find(smoothData>0)))
         % auto threshold computation
         % computes the appropriate threshold for the given percentile value.
