@@ -112,9 +112,9 @@ for ifg=1:length(fg_classified)
     % It could be that the function to detect islands is broken, so this may
     % simply be pointless.
     if config.smooth
-    fprintf('Raw voxel Volume = % i ', length(find(emptyMatrix>0)))
+    fprintf('\n Raw voxel Volume = % i ', length(find(emptyMatrix>0)))
         smoothData = smooth3(emptyMatrix,'gaussian',smoothKernel);
-	fprintf('Smoothed voxel Volume = % i ', length(find(smoothData>0)))
+	fprintf('\n Smoothed voxel Volume = % i ', length(find(smoothData>0)))
         % auto threshold computation
         % computes the appropriate threshold for the given percentile value.
         % Probably not computationally efficient, but principled (aside from the
@@ -161,6 +161,7 @@ for ifg=1:length(fg_classified)
 	boolMatrixVersion   = emptyMatrix>config.threshold;
         fiberBoolNifti.data = boolMatrixVersion;
     end
+    fprintf('\n Final Object Volume = % i ', length(find(boolMatrixVersion>0)))
 
     % convert to unit8 from bool (necessary for niftiSave function)
     fiberBoolNifti.data = uint8(fiberBoolNifti.data);
